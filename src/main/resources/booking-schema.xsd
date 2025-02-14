@@ -1,0 +1,21 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="booking">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="firstname" type="xs:string"/>
+                <xs:element name="lastname" type="xs:string"/>
+                <xs:element name="totalprice" type="xs:int"/>
+                <xs:element name="depositpaid" type="xs:boolean"/>
+                <xs:element name="bookingdates">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="checkin" type="xs:date"/>
+                            <xs:element name="checkout" type="xs:date"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="additionalneeds" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

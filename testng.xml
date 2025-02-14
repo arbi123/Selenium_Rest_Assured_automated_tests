@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="Listeners.listeners"></listener>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="C:/Users/Arbi.topi/IdeaProjects/firstProject/src/main/java/Elements">
+    <classes>
+        <class name="FaqjaKryesoreTest"/>
+        <class name="AlertsTest"/>
+        <class name="KlasaELinqeveTest"/>
+        <class name="ApiRestBookerTest"></class>
+    </classes>
+</test> <!-- Test -->
+</suite>
