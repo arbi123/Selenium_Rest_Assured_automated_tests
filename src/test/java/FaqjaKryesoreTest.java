@@ -5,9 +5,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class FaqjaKryesoreTest {
     private final WebDriver driver = BaseInformation.getDriver();
@@ -50,11 +48,11 @@ public class FaqjaKryesoreTest {
                 .perform();
     }
 
-
     @Test(dependsOnMethods  ="goToPractice")
-    public void fillForm()  {
-       page.nameForm.sendKeys("arbi");
-       page.lastNameForm.sendKeys("topi");
+    @Parameters({"username", "password"})
+    public void fillForm(@Optional("defaultUser") String username, @Optional("defaultPass") String password)  {
+       page.nameForm.sendKeys(username);
+       page.lastNameForm.sendKeys(password);
        page.emailForm.sendKeys("arbi.topi@gmail.com");
        page.mobileNumberForm.sendKeys("0695654618");
        page.genderPick("Male");
