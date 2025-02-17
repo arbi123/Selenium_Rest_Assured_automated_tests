@@ -42,6 +42,7 @@ public class BaseInformation {
 
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--remote-allow-origins=*");
+                    options.setHeadless(true);
                     System.setProperty("webdriver.chrome.driver", "C:\\Users\\Arbi.topi\\IdeaProjects\\firstProject\\src\\main\\resources\\chromedriver.exe");
                     driver = new ChromeDriver(options);
                     driver.manage().window().maximize();
