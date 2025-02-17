@@ -10,6 +10,7 @@
         <class name="AlertsTest"/>
         <class name="KlasaELinqeveTest"/>
         <class name="ApiRestBookerTest"></class>
+        <class name="SliderTest"></class>
     </classes>
 </test> <!-- Test -->
 </suite>

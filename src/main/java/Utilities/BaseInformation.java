@@ -4,12 +4,18 @@ import Globals.Globals;
 import org.codehaus.plexus.util.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.ServerSocket;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
@@ -33,14 +39,14 @@ public class BaseInformation {
             switch (browserType) {
 
                 case "chrome" -> {
+
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--remote-allow-origins=*");
                     System.setProperty("webdriver.chrome.driver", "C:\\Users\\Arbi.topi\\IdeaProjects\\firstProject\\src\\main\\resources\\chromedriver.exe");
                     driver = new ChromeDriver(options);
                     driver.manage().window().maximize();
                     driver.manage().window().maximize();
-                    wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // 10 sec explicit wait
-
+                    wait = new WebDriverWait(driver, Duration.ofSeconds(10));
                 }
 
                 case "firefox" -> {
@@ -51,6 +57,9 @@ public class BaseInformation {
 
         return driver;
     }
+    // Method to get an available port dynamically
+
+
     public String getScreenShot() throws IOException {
         String timeStamp = new SimpleDateFormat("HHmm_ddMM_yyss").format(new Date());
         TakesScreenshot ts = (TakesScreenshot) driver;

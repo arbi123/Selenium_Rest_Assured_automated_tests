@@ -17,6 +17,10 @@ public class Globals {
 
     public static String gender ="Male";
 
+    public static final String DB_URL = "jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1";
+    public static final String USER = "sa";
+    public static final String PASSWORD = "";
+
     public static String generateRandomString(int length) {
         // Define characters to include in the random string
         String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
