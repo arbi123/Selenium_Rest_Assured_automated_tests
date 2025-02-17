@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite" parallel="tests" thread-count="2">
+    <listeners>
+        <listener class-name="Listeners.listeners"></listener>
+    </listeners>
+    <parameter name="username" value="arbi"/>
+    <parameter name="password" value="arbi123"/>
+    <parameter name="age" value="23"/>
+    <test name="GroupedTest" parallel="false">
+        <classes>
+            <class name="FaqjaKryesoreTest"/>
+            <class name="AlertsTest"/>
+            <class name="KlasaELinqeveTest"/>
+            <class name="SliderTest"/>
+        </classes>
+    </test>
+
+    <test name="ExelTest">
+        <classes>
+            <class name="ExelTest"/>
+            <class name="ApiRestBookerTest"/>
+        </classes>
+    </test>
+    <test name="ApiRestBookerTest">
+        <classes>
+            <class name="ApiRestBookerTest"/>
+        </classes>
+    </test>
+</suite>
