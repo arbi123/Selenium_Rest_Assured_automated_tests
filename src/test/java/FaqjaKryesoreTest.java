@@ -18,7 +18,7 @@ public class FaqjaKryesoreTest {
      }
 
 
-    @Test
+    @Test(priority = 1)
     public void loopTest(){
         WebElement footer = driver.findElement(By.tagName("footer"));
         int deltaY = footer.getRect().y;
@@ -34,7 +34,7 @@ public class FaqjaKryesoreTest {
         }
     }
 
-    @Test(dependsOnMethods = "loopTest")
+    @Test(dependsOnMethods = "loopTest",priority = 2)
     public void goToPractice() throws InterruptedException {
         Assert.assertEquals(driver.getCurrentUrl(),"https://demoqa.com/forms");
         Assert.assertTrue(page.practiceForm.isDisplayed());
@@ -48,7 +48,7 @@ public class FaqjaKryesoreTest {
                 .perform();
     }
 
-    @Test(dependsOnMethods  ="goToPractice")
+    @Test(dependsOnMethods  ="goToPractice",priority = 3)
     @Parameters({"username", "password"})
     public void fillForm(@Optional("defaultUser") String username, @Optional("defaultPass") String password)  {
        page.nameForm.sendKeys(username);
@@ -59,7 +59,7 @@ public class FaqjaKryesoreTest {
      }
 
 
-    @Test(dependsOnMethods = "fillForm")
+    @Test(dependsOnMethods = "fillForm",priority = 4)
     public void selectingDate(){
          page.birthForm.click();
       Select month = new Select(page.monthBirthForm);
@@ -69,33 +69,33 @@ public class FaqjaKryesoreTest {
         page.dayBithForm.click();
     }
 
-    @Test(dependsOnMethods = "selectingDate")
+    @Test(dependsOnMethods = "selectingDate",priority = 5)
     public void selectingSubject(){
          page.subjectForm.click();
          page.subjectForm.sendKeys("En");
          page.subjectForm.sendKeys(Keys.TAB);
     }
 
-    @Test(dependsOnMethods = "selectingSubject")
+    @Test(dependsOnMethods = "selectingSubject",priority = 6)
     public void clickBoxHobbies()  {
         page.sportsHobbies.click();
         page.readingHobbies.click();
         page.musicHobbies.click();
     }
 
-    @Test(dependsOnMethods = "clickBoxHobbies")
+    @Test(dependsOnMethods = "clickBoxHobbies",priority = 7)
     public void uploadPhoto(){
         String filePath = System.getProperty("user.home") + "\\Downloads\\Order.png"; // Windows
         page.uploadPicture.sendKeys(filePath);
     }
 
-    @Test(dependsOnMethods = "uploadPhoto")
+    @Test(dependsOnMethods = "uploadPhoto",priority = 8)
     public void addressFill(){
         String longText = "A".repeat(1000);
         page.addressField.clear();
         page.addressField.sendKeys(longText);
     }
-    @Test(dependsOnMethods = "addressFill")
+    @Test(dependsOnMethods = "addressFill",priority = 8)
     public void selectStateandCity(){
 
         Assert.assertFalse(page.selectCity.isSelected());
@@ -115,12 +115,12 @@ public class FaqjaKryesoreTest {
 
 
     }
-    @Test(dependsOnMethods = "selectStateandCity")
+    @Test(dependsOnMethods = "selectStateandCity",priority = 9)
     public void clickSubmit(){
          page.submitButton.click();
     }
 
-    @Test(dependsOnMethods = "clickSubmit")
+    @Test(dependsOnMethods = "clickSubmit",priority = 10)
     public void verifyConfirmPage(){
          Assert.assertTrue(page.confirmTitle.isDisplayed());
 
