@@ -5,11 +5,16 @@
         <listener class-name="Listeners.listeners"></listener>
     </listeners>
     <test verbose="2" preserve-order="true" name="C:/Users/Arbi.topi/IdeaProjects/firstProject/src/main/java/Elements">
-    <classes>
+        <parameter name="username" value="arbi"/>
+        <parameter name="password" value="arbi123"/>
+        <parameter name="age" value="23"/>
+        <classes>
+        <class name="ExelTest"/>
         <class name="FaqjaKryesoreTest"/>
         <class name="AlertsTest"/>
         <class name="KlasaELinqeveTest"/>
-        <class name="ApiRestBookerTest"></class>
+        <class name="ApiRestBookerTest"/>
+        <class name="SliderTest"/>
     </classes>
 </test> <!-- Test -->
 </suite>

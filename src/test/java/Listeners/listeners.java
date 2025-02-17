@@ -34,7 +34,6 @@ public class listeners extends BaseInformation implements ITestListener {
 
     }
 
-    // When Test case get failed, this method is called.
     @Override
     public void onTestFailure(ITestResult Result)
     {
@@ -51,7 +50,6 @@ public class listeners extends BaseInformation implements ITestListener {
         System.out.println("The name of the testcase failed is :"+Result.getName());
     }
 
-    // When Test case get Skipped, this method is called.
     @Override
     public void onTestSkipped(ITestResult Result)
     {

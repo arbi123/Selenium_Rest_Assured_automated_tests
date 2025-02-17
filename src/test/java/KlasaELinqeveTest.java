@@ -98,10 +98,7 @@ public void testimg(){
 
 }
 
-    @AfterClass
-    public void quit(){
-        driver.quit();
-    }
+
 }
 
 
