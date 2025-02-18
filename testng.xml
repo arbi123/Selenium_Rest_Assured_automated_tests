@@ -16,5 +16,8 @@
         <class name="ApiRestBookerTest"/>
         <class name="SliderTest"/>
     </classes>
+
+
+
 </test> <!-- Test -->
 </suite>

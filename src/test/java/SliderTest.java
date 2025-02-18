@@ -59,7 +59,7 @@ public class SliderTest {
     public void looptest() throws InterruptedException {
         for(int i=-347;i<360;i=i+15){
             sliderMoveby1(i);
-            Thread.sleep(1000);
+            Thread.sleep(100);
             page.getCountriesButton.click();
             Assert.assertEquals(getSliderNumber(),listsize());
 
